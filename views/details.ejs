@@ -1,0 +1,63 @@
+
+<%- include("../partials/header"); %>
+
+
+<div class="container">
+
+  <%- include("../partials/navBar"); %>
+
+  <div class="row">
+    <div class="col-md-6 flag">
+      <img src="<%= details.flag %>" alt="flag">
+    </div>
+
+    <div class="col-md-6 details">
+
+          <div class="row">
+            <div class="col-xs-12 name"> <h1> <%= details.name %></h1> </div>
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <p> <b>nativename :</b> <%= details.native%> </p>
+                  <p> <b>population : </b><%= details.population%> </p>
+                  <p> <b>region :</b> <%= details.region%> </p>
+                  <p> <b>subregion :</b> <%= details.sub%> </p>
+                  <p> <b>capital :</b> <%= details.capital%> </p>
+                </div>
+                <div class="col-md-6">
+                  <p> <b>languages :</b> 
+                    <% Object.values(details.lang).forEach((l) => {%>
+                      <span> -<%=l%> </span>
+                   <%})%> 
+                  </p>
+
+                  <p> <b>currency :</b>
+                    <% Object.values(details.curr).forEach((l) => {%>
+                       <span> <%=l.name%> (<%=l.symbol%>) </span>
+                    <%})%> 
+                  </p>
+
+                </div>
+            </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="row border">
+                <div class="col-md-6">
+                  <p><b>Border countries :</b></p>
+                </div>
+                <div class="col-md-6">
+                  <% if (details.borders !== undefined) {%>
+                 <% details.borders.forEach((border) =>{%>
+                    <span> <a href="/<%=border%>" name="code" > <%=border%> </a> </span>
+                 <%});} else {%>
+                  <span> none</span>
+                  <%}%>
+                </div>
+            </div>
+            </div>
+          </div>
+
+    </div>
+</div>
+
+<%- include("../partials/footer"); %>
