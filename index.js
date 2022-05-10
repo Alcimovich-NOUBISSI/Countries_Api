@@ -37,7 +37,7 @@ app.get("/", (_, res) => {
   if(filter !== undefined || region === undefined) {
     uRl = url
   }
-
+  
     https.get( uRl , (response) => {
             let result = "";
             let co = []
