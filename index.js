@@ -23,7 +23,7 @@ app.get("/", (_, res) => {
 });
 
 
- app.post("/", (request, res) => {
+app.post("/", (request, res) => {
 
   region = request.body.region;
   filter = request.body.filter;
