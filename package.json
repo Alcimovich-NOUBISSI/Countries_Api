@@ -4,7 +4,7 @@
   "description": "countries using apis",
   "main": "index.js",
   "engines": {
-    "node": "16.x"
+    "node": "14.x"
   },
   "dependencies": {
     "ejs": "^3.1.6",
